@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Customer Suggestions</title>
+
+    <style>
+
+        body{
+            font-family: Arial;
+            background: linear-gradient(
+                135deg,
+                #dfe9f3,
+                #cfd9ff
+            );
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            height:100vh;
+        }
+
+        .box{
+            background:white;
+            width:500px;
+            padding:40px;
+            border-radius:20px;
+            box-shadow:0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            text-align:center;
+            color:#4f46e5;
+            margin-bottom:20px;
+        }
+
+        label{
+            font-weight:bold;
+        }
+
+        select, textarea{
+            width:100%;
+            padding:12px;
+            margin-top:10px;
+            margin-bottom:20px;
+            border-radius:10px;
+            border:1px solid gray;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            border:none;
+            background:#4f46e5;
+            color:white;
+            border-radius:10px;
+            font-size:18px;
+            cursor:pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Customer Suggestion Form</h1>
+
+<form action="/submit_suggestion"
+method="POST">
+
+<label>
+What would make you stay with us?
+</label>
+
+<select name="reason">
+
+<option>
+Better Offers
+</option>
+
+<option>
+Lower Prices
+</option>
+
+<option>
+Better Internet Speed
+</option>
+
+<option>
+Better Customer Support
+</option>
+
+<option>
+Other
+</option>
+
+</select>
+
+<label>
+Additional Suggestion
+</label>
+
+<textarea
+name="message"
+rows="5"
+placeholder="Enter your suggestion here..."
+></textarea>
+
+<button type="submit">
+Submit Suggestion
+</button>
+
+</form>
+
+</div>
+
+</body>
+</html>

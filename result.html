@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            background: linear-gradient(
+                135deg,
+                #dfe9f3,
+                #ffffff,
+                #cfd9ff
+            );
+
+            min-height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .container{
+            width:800px;
+            background:white;
+            border-radius:25px;
+            padding:40px;
+            box-shadow:0 8px 30px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        h1{
+            color:#1f3c88;
+            font-size:42px;
+            margin-bottom:10px;
+        }
+
+        .subtitle{
+            color:gray;
+            margin-bottom:35px;
+            font-size:18px;
+        }
+
+        .result-box{
+            background:#f4fff6;
+            border-radius:20px;
+            padding:30px;
+            margin-top:20px;
+            box-shadow:0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .result{
+            font-size:40px;
+            color:#16a34a;
+            font-weight:bold;
+            margin-top:10px;
+        }
+
+        .message{
+            margin-top:20px;
+            background:#e8fff0;
+            padding:15px;
+            border-radius:15px;
+            color:#166534;
+            font-size:18px;
+        }
+
+        .details{
+            display:flex;
+            justify-content:space-around;
+            margin-top:30px;
+            background:#f5f7ff;
+            border-radius:20px;
+            padding:25px;
+        }
+
+        .detail-box h3{
+            color:#4f46e5;
+            margin-bottom:10px;
+        }
+
+        .detail-box p{
+            font-size:20px;
+            font-weight:bold;
+        }
+
+        .buttons{
+            margin-top:35px;
+        }
+        
+        button{
+            padding:15px 30px;
+            border:none;
+            border-radius:40px;
+            font-size:18px;
+            cursor:pointer;
+            margin:10px;
+            transition:0.3s;
+        }
+
+        .home-btn{
+            background:#4f46e5;
+            color:white;
+        }
+
+        .home-btn:hover{
+            background:#3528c8;
+        }
+
+        .suggestion-btn{
+            background:white;
+            border:2px solid #4f46e5;
+            color:#4f46e5;
+        }
+
+        .suggestion-btn:hover{
+            background:#4f46e5;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Customer Churn Prediction</h1>
+
+    <p class="subtitle">
+        Predicting Customer Retention
+    </p>
+
+    <div class="result-box">
+
+        <h2>Prediction Result</h2>
+
+        <div class="result">
+            {{ result }}
+        </div>
+
+        <div class="message">
+
+            {% if "stay" in result %}
+                Great! This customer is not likely to churn.
+                Keep up the good service!
+            {% else %}
+                Customer may leave.
+                Consider sending offers and discounts.
+            {% endif %}
+
+        </div>
+
+        <div class="details">
+
+            <div class="detail-box">
+                <h3>Gender</h3>
+                <p>{{ gender }}</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Tenure</h3>
+                <p>{{ tenure }} Months</p>
+            </div>
+
+            <div class="detail-box">
+                <h3>Monthly Charges</h3>
+                <p>₹ {{ monthly_charges }}</p>
+            </div>
+
+        </div>
+        
+        <div class="buttons">
+
+            <a href="/">
+                <button class="home-btn">
+                    Go Back Home
+                </button>
+            </a>
+
+            <a href="/suggestion">
+    <button class="suggestion-btn">
+        Give Suggestion
+    </button>
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
